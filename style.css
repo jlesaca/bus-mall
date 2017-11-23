@@ -2,6 +2,10 @@ body {
   background-color: gray;
 }
 
+#icon {
+  width: 50px;
+}
+
 img {
   width: 20%;
   padding-left: 15px;
@@ -12,9 +16,10 @@ header {
   border-bottom-style: solid;
 }
 
+
 ul {
   list-style-type: none;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 li {
