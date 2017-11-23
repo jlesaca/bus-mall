@@ -3,6 +3,9 @@ body {
 }
 
 #icon {
+  float: left;
+  margin-top: -50px;
+  margin-right: 10px;
   width: 50px;
 }
 
