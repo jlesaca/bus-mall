@@ -3,10 +3,26 @@ body {
 }
 
 img {
-  width: 25%;
-  align-items: center;
+  width: 20%;
+  padding-left: 15px;
+  padding-top: 50px;
 }
 
-.myChart {
-  float: left;
+header {
+  border-bottom-style: solid;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 100px;
+}
+
+li {
+  float: right;
+  display: block;
+  padding: 15px;
+}
+
+div {
+  width: 50%;
 }
