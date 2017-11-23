@@ -67,7 +67,7 @@ onClick: function(event) {
       }
       tracker.displayImages();
     }
-    if (tracker.clickCount === 5){
+    if (tracker.clickCount === 25){
       var ctx = document.getElementById('myChart');
       var options = {
         type: 'bar',
@@ -78,49 +78,49 @@ onClick: function(event) {
             data: allProducts.map(function(x) {return x.votes;}),
             backgroundColor: [
               'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
             ],
             borderColor: [
               'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
-              'rgb(128, 0, 32)',
-              'rgb(0, 0, 0)',
-              'rgb(255, 255, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
+              'rgb(0, 0, 255)',
+              'rgb(192, 192, 192)',
+              'rgb(255, 255, 0)',
+              'rgb(255, 0, 255)',
+              'rgb(255, 0, 0)',
+              'rgb(0, 255, 0)',
             ],
             borderWidth: 1
           },
@@ -137,23 +137,11 @@ onClick: function(event) {
         }
       };
       var myChart = new Chart(ctx, options);
+      console.log ('myChart', myChart);
       tracker.imagesEl.removeEventListener('click', tracker.onClick);
     }
+    localStorage.setItem('allProducts', JSON.stringify(allProducts));
   }
 };
-
-localStorageSet: function() {
-    localStorage.clear ();
-    var encodeAllProducts = JSON.stringify(allProducts);
-    localStorage.setItem('AllProducts', encodeAllProducts);
-  },
-
- localStorageGet: function () {
-    var obj = JSON.parse(localStorage.getItem('AllProducts'));
-    if (obj !== null){
-      allProducts = obj;
-    }
-  }
-
 tracker.imagesEl.addEventListener('click', tracker.onClick);
 tracker.displayImages();

@@ -2,11 +2,32 @@ body {
   background-color: gray;
 }
 
-img {
-  width: 25%;
-  align-items: center;
+#icon {
+  width: 50px;
 }
 
-.myChart {
-  float: left;
+img {
+  width: 20%;
+  padding-left: 15px;
+  padding-top: 50px;
+}
+
+header {
+  border-bottom-style: solid;
+}
+
+
+ul {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+li {
+  float: right;
+  display: block;
+  padding: 15px;
+}
+
+div {
+  width: 50%;
 }
