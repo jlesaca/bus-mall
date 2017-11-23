@@ -1,0 +1,12 @@
+body {
+  background-color: gray;
+}
+
+img {
+  width: 25%;
+  align-items: center;
+}
+
+.myChart {
+  float: left;
+}
