@@ -137,10 +137,10 @@ onClick: function(event) {
         }
       };
       var myChart = new Chart(ctx, options);
-      console.log ('myChart', myChart)
+      console.log ('myChart', myChart);
       tracker.imagesEl.removeEventListener('click', tracker.onClick);
     }
-  localStorage.setItem('allProducts', JSON.stringify(allProducts));
+    localStorage.setItem('allProducts', JSON.stringify(allProducts));
   }
 };
 tracker.imagesEl.addEventListener('click', tracker.onClick);
