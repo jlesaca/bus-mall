@@ -137,23 +137,11 @@ onClick: function(event) {
         }
       };
       var myChart = new Chart(ctx, options);
+      console.log ('myChart', myChart)
       tracker.imagesEl.removeEventListener('click', tracker.onClick);
     }
+  localStorage.setItem('allProducts', JSON.stringify(allProducts));
   }
 };
-
-localStorageSet: function() {
-    localStorage.clear ();
-    var encodeAllProducts = JSON.stringify(allProducts);
-    localStorage.setItem('AllProducts', encodeAllProducts);
-  },
-
- localStorageGet: function () {
-    var obj = JSON.parse(localStorage.getItem('AllProducts'));
-    if (obj !== null){
-      allProducts = obj;
-    }
-  }
-
 tracker.imagesEl.addEventListener('click', tracker.onClick);
 tracker.displayImages();
