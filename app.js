@@ -16,7 +16,7 @@ function Product(name, path) {
   }
 })();
 
-var tracker ={
+var tracker = {
   imagesEl: document.getElementById('images'),
   resultsEl: document.getElementById('results'),
   clickCount: 0,
@@ -53,8 +53,6 @@ var tracker ={
   },
 
 onClick: function(event) {
-    console.log(event.target.id);
-
     if(event.target.id === 'images') {
       return;
     } else {
@@ -67,7 +65,7 @@ onClick: function(event) {
       }
       tracker.displayImages();
     }
-    if (tracker.clickCount === 25){
+    if (tracker.clickCount === 5){
       var ctx = document.getElementById('myChart');
       var options = {
         type: 'bar',
@@ -137,7 +135,6 @@ onClick: function(event) {
         }
       };
       var myChart = new Chart(ctx, options);
-      console.log ('myChart', myChart);
       tracker.imagesEl.removeEventListener('click', tracker.onClick);
     }
     localStorage.setItem('allProducts', JSON.stringify(allProducts));
