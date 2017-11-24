@@ -65,7 +65,7 @@ onClick: function(event) {
       }
       tracker.displayImages();
     }
-    if (tracker.clickCount === 5){
+    if (tracker.clickCount === 25){
       var ctx = document.getElementById('myChart');
       var options = {
         type: 'bar',
